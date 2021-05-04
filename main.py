@@ -4,6 +4,21 @@ import argparse
 from datetime import datetime
 
 
+primary_key = ''
+secondary_key = 'tab'
+
+if sys.platform.startswith("java"):
+    raise NotImplementedError("Jython is not yet supported by PyAutoGUI.")
+elif sys.platform == "darwin": # use command key for mac os
+    primary_key = 'command'
+elif sys.platform == "win32":
+    primary_key = 'altleft'
+elif platform.system() == "Linux":
+    primary_key = 'altleft'
+else:
+    raise NotImplementedError("Your platform (%s) is not supported by PyAutoGUI." % (platform.system()))
+
+
 # validate the given argument to ensure it is an integer.
 def numeric_val(duration):
     if not duration.isnumeric():
@@ -41,7 +56,7 @@ def keep_awake(duration, interval):
                 print(f'System has been awake since {start_time} until {end_time} for a total duration of {get_formatted_time((end_time - start_time).total_seconds())}')
                 sys.exit(0)
             pyautogui.sleep(interval)
-            pyautogui.hotkey('altleft', 'tab')
+            pyautogui.hotkey(primary_key, secondary_key)
             current_time = datetime.now()
             print(f'Operation performed at {current_time}. Duration elapsed is {get_formatted_time((current_time - start_time).total_seconds())}')
     except Exception as e:
