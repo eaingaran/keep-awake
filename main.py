@@ -53,8 +53,8 @@ def keep_awake(duration, interval):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-duration', default=3600, help='Duration to be awake in seconds', type=numeric_val)
-    parser.add_argument('-interval', default=60, help='Interval at which operation to be performed', type=numeric_val)
+    parser.add_argument('-d', '--duration', default=3600, help='Duration to be awake in seconds', type=numeric_val)
+    parser.add_argument('-i', '--interval', default=60, help='Interval at which operation to be performed', type=numeric_val)
     args = parser.parse_args()
 
     keep_awake(args.duration, args.interval)
