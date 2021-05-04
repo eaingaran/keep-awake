@@ -10,6 +10,7 @@
 ### Instructions
 
 - Setup python (Preferably 3.x)
+- [Install PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/install.html)
 - Clone this repository
 - **Optional** Setup virtual environment (I strongly recommend it) *If you are using virtual environment, make sure you activate it before installing the requirement.*
 - Install requirements - `pip install -r requirements.txt` *If you are in a computer that uses proxy, you can add optional parameter `--proxy=username:"password"@proxy_url:proxy_port` to pip*
