@@ -1,6 +1,11 @@
 # keep-awake
 
-## An Utility for efficient multitaskers to prevent windows machines from going to sleep or any application like skype/teams to conclude you are "Away".
+## An Utility for efficient multitaskers to prevent computer from going to sleep or any application like skype/teams to conclude you are "Away".
+
+### Supported Platorms
+- Windows
+- Mac OS
+- Linux
 
 ### Instructions
 
